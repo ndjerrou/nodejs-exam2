@@ -10,11 +10,14 @@ module.exports = {
 
         writeData(books);
 
-        res.status(201).send({ ok: true, data: book });
+        res.status(201).send({ok: true, data: book });
     },
 
     getBooks(req, res) {
         const books = readData();
+        //expected body
+        //
+        // "sort" : "author" or "title" or "nationality"
 
         const { sort } = req.query;
 
@@ -32,7 +35,7 @@ module.exports = {
                 break;
         }
 
-        res.send(books);
+        res.status(201).send({ok: true,filter: sort, data: books});
     },
   
     getOneBook(req, res) {
@@ -45,7 +48,7 @@ module.exports = {
         if (!book)
         return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
 
-        res.send(book);
+        res.status(201).send({ok: true,id:id,data:book});
     },
 
     updateOneBook(req, res) {
@@ -53,6 +56,7 @@ module.exports = {
 
         const { id } = req.params;
 
+        
         const book = books.find((book) => book.id === +id);
 
         if (!book)
@@ -72,7 +76,7 @@ module.exports = {
 
         writeData(newBooks);
 
-        res.send({ ok: true, data: book });
+        res.send({ ok: true, id: id, newdata: book });
     },
     
     deleteOneBook(req, res) {

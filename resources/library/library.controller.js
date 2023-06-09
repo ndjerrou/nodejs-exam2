@@ -62,11 +62,15 @@ module.exports = {
             book[key] = req.body[key];
         }
 
-        const idx = books.findIndex((book) => book.id === +id);
+        const newBooks = books.filter((value) => {
+            const book = value.id != +id;
+            return book;
+        });
 
-        books.splice(idx, 1, book);
+        newBooks.push(book);
+        newBooks.sort((a,b)=>a.id - b.id);
 
-        writeData(books);
+        writeData(newBooks);
 
         res.send({ ok: true, data: book });
     },

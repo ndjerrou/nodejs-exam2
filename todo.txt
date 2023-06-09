@@ -8,7 +8,7 @@ post fait
 
 delete fait
 
-update a faire
+update fait
 
 pagination a faire
 

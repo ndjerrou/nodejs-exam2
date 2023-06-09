@@ -18,7 +18,7 @@ router.route('/books').get(log, getBooks).post(log, verifyPayload, addOneBook);
 router
     .route('/books/:id')
     .get(log,getOneBook)
-    .put(log,updateOneBook)
+    .put(log,verifyPayload,updateOneBook)
     .delete(log,deleteOneBook);
 
 module.exports = router;

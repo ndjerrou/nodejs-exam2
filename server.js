@@ -1,7 +1,8 @@
 const express = require('express');
 
 const library = require('./resources/library/library.router');
-
+const journal = require('./middlewares/journal');
+const authentification = require('./middlewares/authentification');
 const app = express();
 
 /**
@@ -15,6 +16,15 @@ app.use(express.json());
  */
 app.use('/api/v1/library', library);
 
+/**
+ * Middleware de journalisation
+ */
+app.use(journal);
+
+/**
+ * Middleware d'authentification
+ */
+app.use(authentification);
 /**
  * Démarrage du serveur sur le port 3000
  */

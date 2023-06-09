@@ -1,16 +1,1 @@
-[{
-    "id": 1,
-    "title": "The Strange Case of Dr Jekyll and Mr Hyde",
-    "author": "Robert Louis Stevenson",
-    "nationality": "English"
-}, {
-    "id": 2,
-    "title": "Dracula",
-    "author": "Bram Stoker",
-    "nationality": "Irish"
-}, {
-    "id": 3,
-    "title": "Frankenstein",
-    "author": "Mary Shelley",
-    "nationality": "English"
-}]
+[{"id":1,"title":"The Strange Case of Dr Jekyll and Mr Hyde","author":"Robert Louis Stevenson","nationality":"English"},{"id":2,"title":"Dracula","author":"Bram Stoker","nationality":"Irish"},{"id":3,"title":"Frankenstein","author":"Mary Shelley","nationality":"English"}]

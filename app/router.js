@@ -1,6 +1,10 @@
 import express from 'express';
 
 import {
+  validatePayload
+} from '../middlewares/payloadValidators.js';
+
+import {
   getAllBooks,
   getOneBook,
   addOneBook,
@@ -13,10 +17,10 @@ export const router = express.Router();
 router
   .route('')
   .get(getAllBooks)
-  .post(addOneBook);
+  .post(validatePayload, addOneBook);
 
 router
   .route('/:id')
   .get(getOneBook)
-  .put(updateOneBook)
+  .put(validatePayload, updateOneBook)
   .delete(deleteOneBook);

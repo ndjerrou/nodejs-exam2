@@ -27,7 +27,7 @@ Context: You have been assigned to develop a Library Management System API using
   - Implement a logger middleware that logs the details of each incoming request (intention, endpoint targeted, request’s hostname at least)
   - Create an authentication middleware to protect access to certain routes (only the DELETE one). It should act like the following : req.user should be populated in order to access the end point. Otherwise, we send back an error to the client.
 
-# Requireementts
+# Requirementts
 
 - Read and write book data from/to the "library.json" file for persistence.
 - Write code to validate and sanitize incoming data for book creation and updates.

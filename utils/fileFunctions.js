@@ -9,14 +9,14 @@ const __filename = fileURLToPath(
 
 const __dirname = path.dirname(__filename);
 
-const filePath = path.join(__dirname, '..', 'datawdgfgf', 'library.json');
+const filePath = path.join(__dirname, '..', 'data', 'library.json');
 console.log(filePath);
 
 export function readData() {
     try {
         const data = fs.readFileSync(filePath, 'utf-8');
 
-        return JSON.parse(data); // string ==> Tableau JS
+        return JSON.parse(data);
     } catch (err) {
         return err.message;
     }

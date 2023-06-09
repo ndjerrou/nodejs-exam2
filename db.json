@@ -1,0 +1,46 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Last Question",
+      "author": "Isaac Asimov",
+      "nationality": "American"
+    },
+    {
+      "id": "2",
+      "title": "1984",
+      "author": "George Orwell",
+      "nationality": "British"
+    },
+    {
+      "id": 3,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "nationality": "American"
+    },
+    {
+      "id": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "nationality": "British"
+    },
+    {
+      "id": 5,
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "nationality": "Russian"
+    },
+    {
+      "id": 6,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "nationality": "American"
+    },
+    {
+      "id": 7,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "nationality": "American"
+    }
+  ]
+}

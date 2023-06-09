@@ -4,7 +4,6 @@ module.exports = {
     // Get every book
     getBooks(req, res) {
         const books = readData();
-
         res.send(books);
     },
 
@@ -26,12 +25,17 @@ module.exports = {
     addOneBook(req, res) {
         const books = readData();
         console.log("add");
+        console.log(req.body);
+
 
         const book = { ...req.body, id: books.length + 1 };
+
+        console.log(book);
 
         books.push(book);
 
         writeData(books);
+
 
         res.status(201).send({ ok: true, data: book });
     },

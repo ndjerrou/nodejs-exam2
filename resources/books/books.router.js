@@ -11,7 +11,8 @@ const verifyPayload = require('../../midllewares/verifyPayload');
 
 const router = express.Router();
 
-router.route('').get(getBooks).post(verifyPayload, addOneBook);
+router.route('').get(getBooks);
+router.route('').post(verifyPayload, addOneBook);
 
 router
   .route('/:id')

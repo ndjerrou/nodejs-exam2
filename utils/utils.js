@@ -58,20 +58,26 @@ class Utils {
     static async addBook(newBook){
 
         try {
+            //je recup l'état actuel de la bdd
             let oldBdd = await fs.promises.readFile('./library.json', 'utf8');
+            //je la parse pour la manipuler
             let books = JSON.parse(oldBdd);
+            //je créer un id pour le livre ajouté : si la bdd est vide (books.length à 0) alors je lui met l'id 1 / sinon je recup l'id du dernier element et j'ajoute 1
             const newBookId = books.length > 0 ? books[books.length - 1].id + 1 : 1;
             newBook.id = newBookId;
+            //je push le nouvelle element dans books 
             books.push(newBook);
         
             try {
+              //je ré écris la bdd qui contient le nouvel element 
               await fs.promises.writeFile('./library.json', JSON.stringify(books));
               return newBook;
             } catch (err) {
               console.error(err);
               throw err
             }
-          } catch (err) {
+          } 
+        catch (err) {
             console.error(err);
             throw err
           } 
@@ -84,14 +90,18 @@ class Utils {
         try {
             let oldBdd = await fs.promises.readFile('./library.json', 'utf8');
             let books = JSON.parse(oldBdd);
-        
+
+            //plutot que la boucle map de tout à l'heure, ici j'utilise le findIndex qui est plus simple
             const bookIndex = books.findIndex(book => book.id == id);
+            //si il ne trouve pas d'id correspondant, findIndex me retourne -1
             if (bookIndex === -1) {
               return ({error: "there is no books corresponding with the provided id"});
             }
+            //je récup l'état actuel de l'elelement que je veux modifier avec un spread operator et je lui ajoute le nouveau payload
             books[bookIndex] = { ...books[bookIndex], ...updatedBook };
         
             try {
+              //je ré écris la bdd 
               await fs.promises.writeFile('./library.json', JSON.stringify(books));
               return updatedBook;
             } catch (err) {
@@ -109,16 +119,17 @@ class Utils {
       try {
         let bdd = await fs.promises.readFile('./library.json', 'utf8');
         let books = JSON.parse(bdd);
-        
-        const index = books.findIndex(elt => elt.id == id); // Trouver l'indice du livre correspondant à l'ID
-        
+        // je cherche l'id qui match
+        const index = books.findIndex(elt => elt.id == id);
+        //ici encore je retourne une erreur (propriété error avec laquel je match dans ma route express avec ma condition if(response.error))
         if (index === -1) {
           return { error: "there is no books corresponding with the provided id" };
         }
-        
-        books.splice(index, 1); // Supprimer le livre à l'indice trouvé
+        //je supprime l'element en question
+        books.splice(index, 1);
         
         try {
+          //ré ecriture de la bdd 
           await fs.promises.writeFile('./library.json', JSON.stringify(books));
           return `Le livre numéro ${id} a bien été supprimé.`;
         } catch (err) {
@@ -131,8 +142,6 @@ class Utils {
       }
     }
     
-    
-
     //fonction pour ajouter un livre dans le fichier json
     static async addAdmin(name){
 

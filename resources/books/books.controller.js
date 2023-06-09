@@ -4,9 +4,13 @@ module.exports = {
   addOneBook(req, res) {
     const books = readData();
 
-    const book = { ...req.body, id: books.length + 1 };
+    const idIndex = books.idIndex
 
-    books.push(book);
+    const book = { ...req.body, id: idIndex };
+
+    books.idIndex = parseInt(idIndex) + 1
+
+    books.books.push(book);
 
     writeData(books);
 
@@ -14,8 +18,6 @@ module.exports = {
   },
   getBooks(req, res) {
     const books = readData();
-
-    console.log(req)
 
     res.send(books);
   },
@@ -29,8 +31,6 @@ module.exports = {
       return book.id == id
     });
 
-
-
     if (!book)
       return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
 
@@ -41,36 +41,41 @@ module.exports = {
 
     const { id } = req.params;
 
-    const book = books.find((book) => book.id === +id);
+    const book = books.books.find((book) => book.id == id);
 
     if (!book)
       return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
 
-    for (let key in req.body) {
-      book[key] = req.body[key];
-    }
+    req.body.id = id
 
-    const idx = books.findIndex((book) => book.id === +id);
+    const newBooks = books.books.map((book) => {
 
-    books.splice(idx, 1, book);
+      if (book.id == id) { return req.body }
+      return book
+    })
 
-    writeData(books);
 
-    res.send({ ok: true, data: book });
+    writeData({ books: newBooks, idIndex: books.idIndex });
+
+    res.send({ ok: true, data: newBooks });
   },
   deleteOneBook(req, res) {
     const books = readData();
 
     const { id } = req.params;
+    const book = books.books.find((book) => {
 
-    const book = books.find((book) => book.id === +id);
+      return book.id == id
+    });
+
+
 
     if (!book)
       return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
 
-    const idx = books.findIndex((book) => book.id === +id);
+    const idx = books.books.findIndex((book) => book.id == id);
 
-    const deletedbook = books.splice(idx, 1);
+    const deletedbook = books.books.splice(idx, 1);
 
     writeData(books);
 

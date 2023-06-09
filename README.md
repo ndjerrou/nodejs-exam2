@@ -9,9 +9,13 @@ Context: You have been assigned to develop a Library Management System API using
 - Create a local JSON file named "library.json" to store book data.
 - Design the following endpoints:
   GET /books: Retrieve all books from the library.
+
   GET /books/:id: Retrieve a specific book by ID.
+
   POST /books: Add a new book to the library.
+
   PUT /books/:id: Update an existing book by ID. [*USING the splice method is forbidden here*]
+
   DELETE /books/:id: Delete a book from the library by ID.
 
 - Implement appropriate request handlers and error handling for each endpoint.

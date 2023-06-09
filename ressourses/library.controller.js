@@ -47,33 +47,38 @@ module.exports = {
     res.send(book);
   },
 
-  /**
-   * Contrôleur pour mettre à jour un livre spécifique
-   * @param {Object} req - L'objet requête
-   * @param {Object} res - L'objet réponse
-   */
-  updateOneBook(req, res) {
-    const books = readData();
+/**
+ * Contrôleur pour mettre à jour un livre spécifique sans la méthode splice 
+ * @param {Object} req - L'objet requête
+ * @param {Object} res - L'objet réponse
+ */
+updateOneBook(req, res) {
+  const books = readData();
 
-    const { id } = req.params;
+  const { id } = req.params;
 
-    const book = books.find((book) => book.id === +id);
+  const bookIndex = books.findIndex((book) => book.id === +id);
 
-    if (!book)
-      return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
+  if (bookIndex === -1) {
+    return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
+  }
 
-    for (let key in req.body) {
-      book[key] = req.body[key];
-    }
+  const updatedBook = {
+    ...books[bookIndex],
+    ...req.body
+  };
 
-    const idx = books.findIndex((book) => book.id === +id);
+  const updatedBooks = [
+    ...books.slice(0, bookIndex),
+    updatedBook,
+    ...books.slice(bookIndex + 1)
+  ];
 
-    books.splice(idx, 1, book);
+  writeData(updatedBooks);
 
-    writeData(books);
+  res.send({ ok: true, data: updatedBook });
+},
 
-    res.send({ ok: true, data: book });
-  },
 
   /**
    * Contrôleur pour supprimer un livre spécifique

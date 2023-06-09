@@ -8,6 +8,7 @@ const {
   deleteOneBook,
 } = require('./books.controller');
 const verifyPayload = require('../../middlewares/verifyPayload');
+const verifyRight = require('../../middlewares/verifyRight');
 
 const router = express.Router();
 
@@ -20,6 +21,6 @@ router
   .route('/book/:id')
   .get(getOneBook)
   .put(updateOneBook) // middleware
-  .delete(deleteOneBook);
+  .delete(verifyRight, deleteOneBook);
 
 module.exports = router;

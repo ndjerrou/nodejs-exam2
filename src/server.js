@@ -1,8 +1,8 @@
 const express = require('express');
 
 const library = require('./resources/library/library.router');
-const journal = require('./middlewares/journal');
-const authentification = require('./middlewares/authentification');
+const journal = require('../middlewares/journal');
+const authentification = require('../middlewares/authentification');
 const app = express();
 
 /**

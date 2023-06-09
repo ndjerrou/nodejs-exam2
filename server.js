@@ -67,4 +67,9 @@ app.delete("/books/:id", (req, res) => {
   res.send("Livre effacé");
 });
 
+//put
+app.put("/books/:id", (req, res) => {
+  res.send("livre mis à jour");
+});
+
 app.listen(3000, () => console.log("Server is running"));

@@ -1,45 +1,110 @@
-# Project Title: Library Management System with Local JSON Database
+# Library management system: endpoint documentation
 
-Context: You have been assigned to develop a Library Management System API using Node.js, Express, and JavaScript ES6. The API will provide endpoints for managing books in a library. In this project, you will incorporate a local JSON file as a simple database to store book data persistently. Your focus should be on designing efficient CRUD operations, proper error handling, middleware implementation, and database interactions.
+## GET all books
 
-### Project Tasks:
+- Endpoint:`http://localhost:8000/library`
 
-- Set up an Express server with the necessary dependencies.
+Fetches all the books contained in the database. Allows different query parameters:
 
-- Create a local JSON file named "library.json" to store book data.
-- Design the following endpoints:
-  GET /books: Retrieve all books from the library.
+- limit: If specified, request will return only the number of books given.
+- sort: If specified, will sort the given field  in the given order.
+    syntax: `[title]-[ASC or DSC]`. Asc -> A to Z, DSC -> Z to A
+- title: If specified, will return only books with the given title
+- author: If specified, will return only books with the given author
+- nationality: If specified, will return only books with the given nationality
 
-  GET /books/:id: Retrieve a specific book by ID.
+For exemple: `http://localhost:8000/library?limit=10&sort=title-ASC&author=Oscar%20Wilde` will return the first ten books written by Oscar Wilde with their titles in ascending alphabetical order.
 
-  POST /books: Add a new book to the library.
+Return schema:
+```js
+[
+  {
+    "id": 7,
+    "title": "le conte de Monte Cristo",
+    "author": "Alexandre Dumas",
+    "nationality": "French"
+  },
+  {...}
+]
+```
 
-  PUT /books/:id: Update an existing book by ID. [*USING the splice method is forbidden here*]
 
-  DELETE /books/:id: Delete a book from the library by ID.
+## GET one book by id
 
-- Implement appropriate request handlers and error handling for each endpoint.
+- Endpoint:`http://localhost:8000/library:id`
 
-- Implement sorting and filtering functionalities for the /books endpoint (e.g., sort by title, filter by author).
-- Add pagination to the /books endpoint to limit the number of books returned per request.
+Returns the book with the corresponding id.
 
-- Use middleware functions to handle common tasks:
-  - Implement a logger middleware that logs the details of each incoming request (intention, endpoint targeted, request’s hostname at least)
-  - Create an authentication middleware to protect access to certain routes (only the DELETE one). It should act like the following : req.user should be populated in order to access the end point. Otherwise, we send back an error to the client.
+Return schema:
+```js
+[
+  {
+    "id": 7,
+    "title": "le conte de Monte Cristo",
+    "author": "Alexandre Dumas",
+    "nationality": "French"
+  }
+]
+```
 
-# Requirements
+## POST one book
 
-- Shape of a book : title, author, nationality
-- use Joi for validation
-- Read and write book data from/to the "library.json" file for persistence.
-- Write code to validate and sanitize incoming data for book creation and updates.
-- Include error handling middleware to handle 404 (Not Found) and 500 (Internal Server Error) errors gracefully.
-- Use ES6 syntax and features wherever applicable (arrow functions, destructuring, etc.).
-- Organize your code into separate modules/files for better code management.
-- Write clear and concise documentation for each endpoint, including expected request/response formats.
-- Test your API using a REST client (e.g., Postman) to ensure the endpoints work as expected.
-- Demonstrate proper error handling for edge cases, such as invalid requests or missing book entries.
-- Only the async/await syntax is allowed to ensure a proper handling of the asynchronous code 
+- Endpoint:`http://localhost:8000/library`
 
-  Note: In this project, the local JSON file will serve as a basic database for simplicity. Focus on implementing the server-side functionality, efficient data retrieval and manipulation, middleware usage, and error handling.
+Adds one book to the database. Returns the created book object from the database.
+
+Request body schema:
+```js
+{
+  "title": "Au Bonheur des Dames",
+  "author": "Emile Zola",
+  "nationality": "French"
+}
+```
+
+Return schema:
+```js
+{
+  "id": 13,
+  "title": "Au Bonheur des Dames",
+  "author": "Emile Zola",
+  "nationality": "French"
+}
+```
+
+## PUT one book
+
+- Endpoint:`http://localhost:8000/library/:id`
+
+Updates the book with the corresponding id. Returns the updated book object from the database.
+
+
+Request body schema:
+```js
+{
+  "title": "The Metamorphosis",
+  "author": "Franz Kafka",
+  "nationality": "German"
+}
+```
+
+Return schema:
+```js
+{
+  "id": 6,
+  "title": "The Metamorphosis",
+  "author": "Franz Kafka",
+  "nationality": "German"
+}
+```
+
+## DELETE one book
+
+- Endpoint:`http://localhost:8000/library/:id`
+
+Deletes the book with the corresponding id. **Warning**: This is a protected route that can only be accessed with a bearer token (put anything in there, all that matters is that there is something).
+
+Returns either "Book :id has been deleted" if you have the correct authorisation, or "Unauthorised access on protected route" if you don't.
+
+
 

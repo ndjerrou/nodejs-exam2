@@ -4,19 +4,19 @@ Contexte : Vous avez été chargé de développer une API de gestion de biblioth
 
 ### Tâches du projet :
 
-- Mettre en place un serveur Express avec les dépendances nécessaires.
+- Mettre en place un serveur Express avec les dépendances nécessaires. OK
 
-- Créer un fichier JSON local nommé "library.json" pour stocker les données des livres.
+- Créer un fichier JSON local nommé "library.json" pour stocker les données des livres. OK
 - Concevoir les points d'accès suivants :
-  GET /books : Récupérer tous les livres de la bibliothèque.
+  GET /books : Récupérer tous les livres de la bibliothèque. OK
 
-  GET /books/:id : Récupérer un livre spécifique par son ID.
+  GET /books/:id : Récupérer un livre spécifique par son ID. OK
 
-  POST /books : Ajouter un nouveau livre à la bibliothèque.
+  POST /books : Ajouter un nouveau livre à la bibliothèque. OK
 
   PUT /books/:id : Mettre à jour un livre existant par son ID. [*L'utilisation de la méthode splice est interdite ici*]
 
-  DELETE /books/:id : Supprimer un livre de la bibliothèque par son ID.
+  DELETE /books/:id : Supprimer un livre de la bibliothèque par son ID. OK
 
 - Implémenter des gestionnaires de requêtes appropriés et une gestion des erreurs pour chaque point d'accès.
 
@@ -28,13 +28,13 @@ Contexte : Vous avez été chargé de développer une API de gestion de biblioth
   - Créer un middleware d'authentification pour protéger l'accès à certaines routes (seulement la route DELETE). Il devrait fonctionner comme suit : req.user doit être renseigné pour accéder au point d'accès. Sinon, nous renvoyons une erreur au client.
 # Exigences
 
-- Structure d'un livre : titre, auteur, nationalité
-- Utiliser Joi pour la validation
+- Structure d'un livre : titre, auteur, nationalité  OK
+- Utiliser Joi pour la validation   OK
 - Lire et écrire les données des livres dans/depuis le fichier "library.json" pour la persistance.
 - Écrire du code pour valider et nettoyer les données entrantes lors de la création et de la mise à jour des livres.
 - Inclure un middleware de gestion des erreurs pour gérer les erreurs 404 (Non trouvé) et 500 (Erreur interne du serveur) de manière appropriée.
 - Utiliser la syntaxe et les fonctionnalités ES6 lorsque cela est applicable (fonctions fléchées, destructuration, etc.).
-- Organiser votre code en modules/fichiers séparés pour une meilleure gestion du code.
+- Organiser votre code en modules/fichiers séparés pour une meilleure gestion du code.  OK
 - Rédiger une documentation claire et concise pour chaque point d'accès, y compris les formats de requête/réponse attendus.
 - Tester votre API à l'aide d'un client REST (par exemple, Postman) pour vous assurer que les points d'accès fonctionnent comme prévu.
 - Faire preuve d'une gestion appropriée des erreurs pour les cas particuliers, tels que les requêtes invalides ou les entrées de livre manquantes.

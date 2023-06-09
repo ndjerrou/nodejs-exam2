@@ -13,7 +13,7 @@ export const validatePayload = (req, res, next) => {
     Joi.assert(body, schemaBook);
     next();
   } catch (e) {
-    res.status(422).send({
+    res.status(400).send({
       error: e.details[0].message
     });
   }

@@ -5,8 +5,8 @@ import {
 
 export const getAllBooks = (req, res) => {
 
+    // Tries to read database, returns an error if it can't
     const books = readData();
-
     if (typeof books === 'string') {
         res.status(500).send('Error reading or writing to database');
         return;
@@ -20,22 +20,26 @@ export const getOneBook = (req, res) => {
         id
     } = req.params;
 
+    // Tries to read database, returns an error if it can't
     const books = readData();
-
     if (typeof books === 'string') {
         res.status(500).send('Error reading or writing to database');
         return;
     }
 
+    // Checks if the book we're trying to find exists
     const book = books.filter((book) => book.id === parseInt(id, 10))
-
-    res.status(200).send(book)
+    if (book.length > 0) {
+        res.status(200).send(book)
+    } else {
+        res.status(404).send('This book doesn\'t exist');
+    }
 }
 
 export const addOneBook = (req, res) => {
 
+    // Tries to read database, returns an error if it can't
     const books = readData();
-
     if (typeof books === 'string') {
         res.status(500).send('Error reading or writing to database');
         return;
@@ -46,10 +50,10 @@ export const addOneBook = (req, res) => {
         id: totalBooks + 1,
         ...req.body
     };
-
     books.push(book);
-    const error = writeData(books);
 
+    // Tries to write to database, returns an error if it can't
+    const error = writeData(books);
     if (error) {
         res.status(500).send('Error reading or writing to database');
         return;
@@ -62,11 +66,17 @@ export const updateOneBook = (req, res) => {
     const {
         id
     } = req.params;
-
+    // Tries to read database, returns an error if it can't
     const books = readData();
-
     if (typeof books === 'string') {
         res.status(500).send('Error reading or writing to database');
+        return;
+    }
+
+    // Checks if the book we're trying to update exists
+    const oldBook = books.filter((book) => book.id === parseInt(id, 10))
+    if (oldBook.length === 0) {
+        res.status(404).send('This book doesn\'t exist');
         return;
     }
 
@@ -75,10 +85,10 @@ export const updateOneBook = (req, res) => {
         ...req.body
     }
     const newBooks = books.filter((book) => book.id !== parseInt(id, 10))
-
     newBooks.push(updatedBook);
-    const error = writeData(newBooks);
 
+    // Tries to write to database, returns an error if it can't
+    const error = writeData(newBooks);
     if (error) {
         res.status(500).send('Error reading or writing to database');
         return;
@@ -92,16 +102,24 @@ export const deleteOneBook = (req, res) => {
         id
     } = req.params;
 
+    // Tries to read database, returns an error if it can't
     const books = readData();
-
     if (typeof books === 'string') {
         res.status(500).send('Error reading or writing to database');
         return;
     }
 
-    const newBooks = books.filter((book) => book.id !== parseInt(id, 10))
-    const error = writeData(newBooks);
+    // Checks if the book we're trying to delete exists
+    const oldBook = books.filter((book) => book.id === parseInt(id, 10))
+    if (oldBook.length === 0) {
+        res.status(404).send('This book doesn\'t exist');
+        return;
+    }
 
+    const newBooks = books.filter((book) => book.id !== parseInt(id, 10))
+
+    // Tries to write to database, returns an error if it can't
+    const error = writeData(newBooks);
     if (error) {
         res.status(500).send('Error reading or writing to database');
         return;

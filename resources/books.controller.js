@@ -12,8 +12,24 @@ module.exports = {
         res.status(201).send({ ok: true, data: book })
     },
     getBooks: (req, res) => {
+
         const books = readData();
-        res.send(books);
+        //pagination des résultat
+        const page = parseInt(req.query.page);
+        const limit = parseInt(req.query.limit);
+
+
+        const start = (page - 1) * limit;
+        const end = page * limit;
+        const booksPage = books.slice(start, end);
+        //Pour que ça fonctionne il faudra fournir une limite et une page, sinon tous les livres sont renvoyés.
+        //exemple: http://localhost:9000/api/v1/books?limit=2&page=3
+        res.send({
+            books: books.length,
+            pages: Math.ceil(books.length / limit),
+            currentPage: page,
+            objects: !page || !limit ? books :  booksPage
+        })
     },
     getBook: (req, res) => {
         const { id } = req.params;

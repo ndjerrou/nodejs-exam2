@@ -27,7 +27,6 @@ const verifaddBook = (req, res, next) => {
 };
 
 const verifid = (req, res, next) => {
-  console.log("req.body: ", req.body);
   const schema = Joi.object({
     id: Joi.string().required(),
     auteur: Joi.string(),

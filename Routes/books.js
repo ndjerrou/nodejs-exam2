@@ -15,6 +15,6 @@ router
   .put(verifid, existBook, controller.updateBooks)
   .delete(verifid, existBook, controller.deleteBooks);
 
-router.get("/book/:id", existBook, controller.Book);
+router.get("/books/:id", existBook, controller.Book);
 
 module.exports = router;

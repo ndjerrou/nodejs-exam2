@@ -2,9 +2,8 @@ const axios = require("axios");
 const library = require("../library.json");
 const { v4: uuidv4 } = require("uuid");
 const { writeData } = require("../utils/writeData");
-const { updateData } = require("../utils/updateData");
-const { deleteData } = require("../utils/delete.data");
 
+const dataName = "library.json";
 const Books = (req, res) => {
   try {
     res.send(library);
@@ -30,8 +29,10 @@ const addBooks = async (req, res) => {
       auteur: auteur,
       nationalite: nationalite,
     };
-    await writeData(book, res);
-    res.send("Livre ajouté avec succès");
+    let content = [...library, book];
+
+    await writeData(dataName, content);
+    res.send({ message: "Livre ajouté avec succès", book });
   } catch (error) {
     res.status(400).send(error.message);
   }
@@ -50,7 +51,10 @@ const updateBooks = (req, res) => {
     if (book.nationalite !== nationalite && nationalite !== undefined) {
       book.nationalite = nationalite;
     }
-    updateData(book);
+    const del = library.filter((elm) => elm.id !== book.id);
+    const content = [...del, book];
+    writeData(dataName, content);
+
     res.send("Livre mis à jour avec succès");
   } catch (error) {
     res.status(500).send(error.message);
@@ -59,7 +63,9 @@ const updateBooks = (req, res) => {
 const deleteBooks = async (req, res) => {
   try {
     const { id } = req.body;
-    await deleteData(id);
+    const content = library.filter((book) => book.id !== id);
+
+    writeData(dataName, content);
     res.send("Livre supprimé avec succès");
   } catch (error) {
     res.status(400).send(error.message);

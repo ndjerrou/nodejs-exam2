@@ -1,12 +1,8 @@
 const fs = require("fs/promises");
 
-const writeData = async (book) => {
+const writeData = async (dataName, content) => {
   try {
-    const data = await fs.readFile("library.json", "utf8");
-    const obj = JSON.parse(data);
-    obj.push(book);
-    const json = JSON.stringify(obj);
-    await fs.writeFile("library.json", json, "utf8");
+    await fs.writeFile(dataName, JSON.stringify(content), "utf8");
   } catch (error) {
     console.error("Error:", error);
     throw error;

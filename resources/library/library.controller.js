@@ -16,6 +16,22 @@ module.exports = {
     getBooks(req, res) {
         const books = readData();
 
+        const { sort } = req.query;
+
+        switch (sort){  
+            case "author":
+                books.sort((a,b)=>a.author.localeCompare(b.author));
+                break;
+            
+            case "title":
+                books.sort((a,b)=>a.title.localeCompare(b.title));
+                break;
+
+            case "nationality":
+                books.sort((a,b)=>a.nationality.localeCompare(b.nationality));
+                break;
+        }
+
         res.send(books);
     },
   
@@ -40,7 +56,7 @@ module.exports = {
         const book = books.find((book) => book.id === +id);
 
         if (!book)
-        return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
+            return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
 
         for (let key in req.body) {
             book[key] = req.body[key];

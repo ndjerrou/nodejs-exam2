@@ -9,6 +9,7 @@ const {
 } = require('./library.controller');
 const verifyPayload = require('../../middlewares/verifyPayload');
 const log = require('../../middlewares/logger');
+//const authentification = require('../../middlewares/authenticator');  a faire
 
 const router = express.Router();
 

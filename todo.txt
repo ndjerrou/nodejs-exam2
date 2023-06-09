@@ -10,5 +10,7 @@ delete fait
 
 update a faire
 
-sorting on end point a faire
+pagination a faire
+
+sorting on end point /books fait
 

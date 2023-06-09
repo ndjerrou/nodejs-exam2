@@ -28,6 +28,9 @@ module.exports = {
   getBooks(req, res) {
     //Je mets les livres lus du fichier json dans une constante
     const books = readData();
+    //si la bibliothèque n'existe pas alors reponse d'erreur, le processus s'arrête
+    if (!books) 
+    return res.status(404).send({ ok: false, msg: 'Library is in progress' });
     //Je renvoie au client tous les livres
     res.status(201).send({ ok: true, data: books });
   },

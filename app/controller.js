@@ -7,8 +7,8 @@ import {
 } from "./data-handling/functions.js"
 
 export const getBooks = async (req, res) =>{
-    const { author } = req.params
-    const result = getAllBooks(author)
+    const { author, page } = req.query
+    const result = getAllBooks({author:author,page:page})
     res.send(JSON.stringify(result))
 }
 export const getBook = async (req, res) =>{

@@ -12,9 +12,33 @@ import {
 
 
 export const router = express.Router();
-router.route('/filter/:author').get(getBooks);
+
 router.route('/:id').get(getBook);
-router.route('/:id').put(validateBookChangeload, putBook); // add validation
+//GET localhost:3000/books/:id
+
+router.route('/:id').put(validateBookChangeload, putBook);
+//PUT localhost:3000/books/:id
+/*
+{
+   "title"?: "aa book", -- option
+   "author"?: "author3",-- option
+   "nationality?": "FR" -- option
+}
+*/
+
 router.route('/:id').delete(deleteBook);
+//DELETE localhost:3000/books/:id
+
 router.route('').get(getBooks);
-router.route('').post(validateBookload, postBook); // add validation
+//GET localhost:3000/books?author=author3&page=0
+// author & page optional
+
+router.route('').post(validateBookload, postBook);
+//POST localhost:3000/books
+/*
+{
+   "title": "aa book",
+   "author": "author3",
+   "nationality": "FR"
+}
+*/

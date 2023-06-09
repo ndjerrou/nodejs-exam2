@@ -1,6 +1,10 @@
 import {writeBooks,readBooks,readNextId,updateNextId} from "./read-write.js"
 
-export function getAllBooks(author){
+export function getAllBooks(querry){
+    const author = querry.author
+    const page = Number(querry.page)
+    const booksPerPage = 5
+
     const getAllBooks = readBooks()
     let arrayBooks = []
     Object.keys(getAllBooks).forEach(book=>{
@@ -14,7 +18,19 @@ export function getAllBooks(author){
     arrayBooks = arrayBooks.sort(function (a,b) {
         return a.title - b.title
     })
-    return arrayBooks
+
+    if (page && typeof page != "NaN"){
+        let resultPage = []
+        const defaultIndex = page*booksPerPage
+        if (arrayBooks[defaultIndex]){resultPage.push(arrayBooks[defaultIndex])}
+        if (arrayBooks[defaultIndex+1]){resultPage.push(arrayBooks[defaultIndex+1])}
+        if (arrayBooks[defaultIndex+2]){resultPage.push(arrayBooks[defaultIndex+2])}
+        if (arrayBooks[defaultIndex+3]){resultPage.push(arrayBooks[defaultIndex+3])}
+        if (arrayBooks[defaultIndex+4]){resultPage.push(arrayBooks[defaultIndex+4])}
+        return resultPage
+    } else {
+       return arrayBooks 
+    }
 }
 export function getOneBooks(id){
     let getBooks = readBooks()

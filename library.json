@@ -1,0 +1,15 @@
+
+[
+    {
+        "id": 1,
+        "title": "first book",
+        "author": "Mitchrom",
+        "nationality": "french"
+    },
+    {
+        "id": 2,
+        "title": "second book",
+        "author": "Didier",
+        "nationality": "french"            
+    }
+]

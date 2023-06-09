@@ -9,7 +9,7 @@ import {
 
 const app = express();
 app.use(express.json());
-app.use(logger);
+// app.use(logger);
 app.use('/library', router)
 
 app.listen(8000, () => console.log('Listening on port 8000...'));

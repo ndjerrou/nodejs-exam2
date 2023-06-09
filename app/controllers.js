@@ -4,7 +4,10 @@ import {
 } from '../utils/fileFunctions.js';
 
 export const getAllBooks = (req, res) => {
-
+    console.log(req.query);
+    const {
+        limit
+    } = req.query;
     // Tries to read database, returns an error if it can't
     const books = readData();
     if (typeof books === 'string') {
@@ -12,7 +15,7 @@ export const getAllBooks = (req, res) => {
         return;
     }
 
-    res.status(200).send(books)
+    res.status(200).send(limit ? books.slice(0, limit) : books)
 }
 
 export const getOneBook = (req, res) => {

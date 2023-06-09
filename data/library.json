@@ -16,50 +16,50 @@
     },
     {
         "id": 4,
-        "title": "The Strange Case of Dr Jekyll and Mr Hyde",
-        "author": "Robert Louis Stevenson",
-        "nationality": "English"
+        "title": "L'Assommoir",
+        "author": "Emile Zola",
+        "nationality": "French"
     }, {
         "id": 5,
-        "title": "Dracula",
-        "author": "Bram Stoker",
-        "nationality": "Irish"
+        "title": "Huis Clos",
+        "author": "Jean-paul Sartre",
+        "nationality": "French"
     }, {
         "id": 6,
-        "title": "Frankenstein",
-        "author": "Mary Shelley",
-        "nationality": "English"
+        "title": "The Metamorphosis",
+        "author": "Franz Kafka",
+        "nationality": "German"
     },
     {
         "id": 7,
-        "title": "The Strange Case of Dr Jekyll and Mr Hyde",
-        "author": "Robert Louis Stevenson",
-        "nationality": "English"
+        "title": "le conte de Monte Cristo",
+        "author": "Alexandre Dumas",
+        "nationality": "French"
     }, {
         "id": 8,
-        "title": "Dracula",
-        "author": "Bram Stoker",
-        "nationality": "Irish"
+        "title": "The Great Gatsby",
+        "author": "Francis Scott Fitzgerald",
+        "nationality": "USA"
     }, {
         "id": 9,
-        "title": "Frankenstein",
-        "author": "Mary Shelley",
-        "nationality": "English"
+        "title": "to Kill a Mockingbird",
+        "author": "Harper Lee",
+        "nationality": "USA"
     },
     {
         "id": 10,
-        "title": "The Strange Case of Dr Jekyll and Mr Hyde",
-        "author": "Robert Louis Stevenson",
+        "title": "The Hound of the Baskervilles",
+        "author": "Sir Arthur Conan Doyle",
         "nationality": "English"
     }, {
         "id": 11,
-        "title": "Dracula",
-        "author": "Bram Stoker",
-        "nationality": "Irish"
+        "title": "the Three Musketeers",
+        "author": "Alexandre Dumas",
+        "nationality": "French"
     }, {
         "id": 12,
-        "title": "Frankenstein",
-        "author": "Mary Shelley",
-        "nationality": "English"
+        "title": "San Camilo",
+        "author": "Camilo José Cela",
+        "nationality": "Spanish"
     }
 ]

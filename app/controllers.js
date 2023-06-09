@@ -2,11 +2,19 @@ import {
     writeData,
     readData,
 } from '../utils/fileFunctions.js';
+import {
+    sortFunction,
+    filterFunction
+} from '../utils/filterSortFunctions.js';
 
 export const getAllBooks = (req, res) => {
-    console.log(req.query);
+    // console.log(req.query);
     const {
-        limit
+        limit,
+        author,
+        title,
+        nationality,
+        sort
     } = req.query;
     // Tries to read database, returns an error if it can't
     const books = readData();
@@ -15,7 +23,15 @@ export const getAllBooks = (req, res) => {
         return;
     }
 
-    res.status(200).send(limit ? books.slice(0, limit) : books)
+    const filteredBooks = filterFunction(books, {
+        author,
+        title,
+        nationality
+    });
+    console.log(filteredBooks);
+    const sortedBooks = sortFunction(filteredBooks, sort);
+    console.log(sortedBooks);
+    res.status(200).send(limit ? sortedBooks.slice(0, limit) : sortedBooks)
 }
 
 export const getOneBook = (req, res) => {

@@ -1,6 +1,5 @@
 //Par destructuration, je mets les méthodes writyeData et ReadData dans une constante
 const { writeData, readData } = require('../utils/files');
-
 /**
  * Contrôleur pour ajouter un livre
  * @param {Object} req - L'objet requête

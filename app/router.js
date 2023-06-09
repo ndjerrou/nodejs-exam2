@@ -3,7 +3,6 @@ import express from 'express';
 import {
   validatePayload
 } from '../middlewares/payloadValidators.js';
-
 import {
   getAllBooks,
   getOneBook,
@@ -11,6 +10,9 @@ import {
   updateOneBook,
   deleteOneBook,
 } from './controllers.js';
+import {
+  auth
+} from '../middlewares/auth.js';
 
 export const router = express.Router();
 
@@ -23,4 +25,4 @@ router
   .route('/:id')
   .get(getOneBook)
   .put(validatePayload, updateOneBook)
-  .delete(deleteOneBook);
+  .delete(auth, deleteOneBook);

@@ -46,7 +46,7 @@ module.exports = {
     const book = books.find((book) => book.id === +id);
     //Si le livre n'est pas trouvé, alors reponse d'erreur, le processus s'arrête
     if (!book)
-      return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
+      return res.status(404).send({ ok: false, msg: 'No book like this, here, sorry ! ' });
       //Le if précédent s'est bien passé, le livre est trouvé
       //Je renvoie au client le livre demandé
       res.status(201).send({ ok: true, data: book });
@@ -66,7 +66,7 @@ updateOneBook(req, res) {
   const bookIndex = books.findIndex((book) => book.id === +id);
   //Si ce livre n'existe pas, est renvoyé un message d'erreur avec le statut correspondant. Le processus s'arrête.
   if (bookIndex === -1) {
-    return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
+    return res.status(404).send({ ok: false, msg: 'No book like this, here, sorry ! ' });
   }
   //Arrivé ici, le livre est trouvé
   //Je mets dans une constante un objet qui contient l'id du livre avec les données de la requête
@@ -83,7 +83,7 @@ updateOneBook(req, res) {
   //Je sauvegarde la bibliothèque (dans books) mise à jour dans le fichier json
   writeData(updatedBooks);
   //Je renvoie la réponse
-  res.send({ ok: true, data: updatedBook });
+  res.status(201).send({ ok: true, data: updatedBook });
 },
 
 
@@ -101,7 +101,7 @@ updateOneBook(req, res) {
     const book = books.find((book) => book.id === +id);
     //Si ce livre n'existe pas, est renvoyé un message d'erreur avec le statut correspondant. Le processus s'arrête.
     if (!book)
-      return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
+      return res.status(404).send({ ok: false, msg: 'No book like this, here, sorry ! ' });
     //Je mets dans une constante le livre de la bibliothèque dont l'identifiant correspond à celui de la requête
     const idx = books.findIndex((book) => book.id === +id);
     //Je supprime le livre de la bibliothèque (avec la méthode splice parcequ'on a le droit ici)
@@ -109,6 +109,7 @@ updateOneBook(req, res) {
      //Je sauvegarde la bibliothèque (dans books) mise à jour dans le fichier json
     writeData(books);
     // Je renvoie une confirmation de la suppression
-    res.send({ ok: true, data: deletedBook });
+    res.status(201).send({ ok: true, data: deletedBook });
+    
   },
 };

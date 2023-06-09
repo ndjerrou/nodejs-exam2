@@ -2,16 +2,19 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require("../Controllers/books");
-
-// router.get("/books")(controller.addBooks).post(controller.addBooks);
+const {
+  verifaddBook,
+  verifid,
+  existBook,
+} = require("../Middlewares/verifBook");
 
 router
   .route("/books")
   .get(controller.Books)
-  .post(controller.addBooks)
-  .put(controller.updateBooks)
-  .delete(controller.deleteBooks);
+  .post(verifaddBook, controller.addBooks)
+  .put(verifid, existBook, controller.updateBooks)
+  .delete(verifid, existBook, controller.deleteBooks);
 
-router.get("/book/:id", controller.Book);
+router.get("/book/:id", existBook, controller.Book);
 
 module.exports = router;

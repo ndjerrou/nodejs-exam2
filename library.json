@@ -78,21 +78,16 @@
     "nationalite": "Americain"
   },
   {
-    "id": "ab4528c4-dd31-4985-84ae-471a4211c4e6",
+    "id": "3",
     "titre": "test1",
     "auteur": "auteregt",
     "nationalite": "france"
   },
   {
-    "id": "50325018-ff30-43f0-b2ad-f164700c86b3",
+    "id": "2",
     "titre": "test2",
     "auteur": "text update 5",
     "nationalite": "france"
   },
-  {
-    "id": "73581f3c-3eef-4d6e-bee7-c51e60d52ddf",
-    "titre": "test 52",
-    "auteur": "text update 5",
-    "nationalite": "france"
-  }
+  { "id": "1", "titre": "test 52", "auteur": "6", "nationalite": "france" }
 ]

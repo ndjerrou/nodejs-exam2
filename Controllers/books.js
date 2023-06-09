@@ -14,8 +14,7 @@ const Books = (req, res) => {
 };
 const Book = (req, res) => {
   try {
-    const { id } = req.params;
-    const book = library.find((book) => book.id === id);
+    const book = req.book;
     res.status(200).send(book);
   } catch (error) {
     res.status(400).send(error.message);
@@ -39,9 +38,9 @@ const addBooks = async (req, res) => {
 };
 const updateBooks = (req, res) => {
   try {
-    const { id, titre, auteur, nationalite } = req.body;
+    const { titre, auteur, nationalite } = req.body;
+    const book = req.book;
 
-    const book = library.find((book) => book.id === id);
     if (book.titre !== titre && titre !== undefined) {
       book.titre = titre;
     }
@@ -60,9 +59,7 @@ const updateBooks = (req, res) => {
 const deleteBooks = async (req, res) => {
   try {
     const { id } = req.body;
-
     await deleteData(id);
-
     res.send("Livre supprimé avec succès");
   } catch (error) {
     res.status(400).send(error.message);

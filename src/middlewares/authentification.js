@@ -27,6 +27,4 @@ const authenticationMiddleware = (req, res, next) => {
     // L'utilisateur est authentifié et peut accéder à la route
     next(); // Passer au middleware ou à la route suivante
   };
-  // Utilisation du middleware d'authentification dans votre application
-  app.use(authenticationMiddleware);
   

@@ -25,12 +25,10 @@ module.exports = {
     addOneBook(req, res) {
         const books = readData();
         console.log("add");
-        console.log(req.body);
-
 
         const book = { ...req.body, id: books.length + 1 };
 
-        console.log(book);
+        console.log(req.body);
 
         books.push(book);
 
@@ -46,22 +44,19 @@ module.exports = {
 
         const { id } = req.params;
 
-        const book = books.find((book) => book.id === +id);
+        const book = books.books.find((book) => book.id === id);
 
-        if (!book)
-            return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
+        if (!book) return res.status(404).send({ ok: false, msg: 'Invalid id provided' });
 
-        for (let key in req.body) {
-            book[key] = req.body[key];
-        }
+        const updatedBooks = books.books.map((book) => {
 
-        const idx = books.findIndex((book) => book.id === +id);
+        if (book.id == req.body.id) { return req.body }
+            return book
+        })
 
-        books.splice(idx, 1, book);
+        writeData({ books: updatedBooks });
 
-        writeData(books);
-
-        res.send({ ok: true, data: book });
+        res.send({ ok: true, data: updatedBooks });
     },
 
     // Delete one book with its ID

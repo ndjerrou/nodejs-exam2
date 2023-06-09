@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const booksPath = path.join(__dirname, '..', 'data', 'books.json');
+const booksPath = path.join(__dirname, '..', 'data', 'library.json');
 
 function writeData(content) {
     try {

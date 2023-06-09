@@ -14,10 +14,8 @@ const router = express.Router();
 router.route('').get(getBooks);
 router.route('').post(verifyPayload, addOneBook);
 
-router
-  .route('/:id')
-  .get(getOneBook)
-  .put(updateOneBook)
-  .delete(deleteOneBook);
+router.route('/:id').get(getOneBook);
+router.route('/:id').put(updateOneBook);
+router.route('/:id').delete(deleteOneBook);
 
 module.exports = router;

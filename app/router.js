@@ -16,7 +16,7 @@ export const router = express.Router();
 router.route('/:id').get(getBook);
 //GET localhost:3000/books/:id
 
-//return book or undefined
+//return book(json) or undefined
 
 router.route('/:id').put(validateBookChangeload, putBook);
 //PUT localhost:3000/books/:id
@@ -27,7 +27,7 @@ router.route('/:id').put(validateBookChangeload, putBook);
    "nationality?": "FR" -- option
 }
 */
-//return changed book or undefined
+//return changed book(json) or undefined
 
 router.route('/:id').delete(deleteBook);
 //DELETE localhost:3000/books/:id
@@ -38,7 +38,7 @@ router.route('').get(getBooks);
 //GET localhost:3000/books?author=author3&page=0
 // author & page optional
 
-// return array of books, up to 5 if querry page 
+// return array of books (json), up to 5 if querry page 
 
 router.route('').post(validateBookload, postBook);
 //POST localhost:3000/books
@@ -49,7 +49,7 @@ router.route('').post(validateBookload, postBook);
    "nationality": "FR"
 }
 */
-/* return posted book json {
+/* return posted book(json) {
    "title": "aa book",
    "author": "author3",
    "nationality": "FR"

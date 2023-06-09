@@ -7,21 +7,9 @@
       "nationality": "American"
     },
     {
-      "id": "1",
+      "id": 2,
       "title": "1984",
       "author": "George Orwell",
-      "nationality": "British"
-    },
-    {
-      "id": 3,
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "nationality": "American"
-    },
-    {
-      "id": 4,
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
       "nationality": "British"
     },
     {
@@ -41,6 +29,12 @@
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
       "nationality": "American"
+    },
+    {
+      "id": 8,
+      "title": "100 Años de Soledad",
+      "author": "Gabriel García Márquez",
+      "nationality": "Colombian"
     }
   ]
 }

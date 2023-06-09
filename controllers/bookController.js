@@ -28,8 +28,12 @@ exports.getBook = (req, res) => {
 exports.postBook = (req, res) => {
     readFile(data => {
         const { title, author, nationality } = req.body;
+
+        // Find the highest current id
+        const highestId = data.books.reduce((maxId, book) => Math.max(maxId, book.id), 0);
+
         const newBook = {
-            id: data.books.length + 1,
+            id: highestId + 1,
             title,
             author,
             nationality
@@ -53,7 +57,7 @@ exports.postBook = (req, res) => {
 // update a book
 exports.putBook = (req, res) => {
     readFile(data => {
-        const { id } = req.params;
+        const id = Number(req.params.id);
         const { title, author, nationality } = req.body;
         const updatedBook = {
             id,
@@ -69,8 +73,15 @@ exports.putBook = (req, res) => {
             return res.status(400).send(error.details[0].message);
         }
 
+        // find the index of the book with the provided id
+        const bookIndex = data.books.findIndex(b => b.id === id);
+
+        if (bookIndex === -1) {
+            return res.status(404).send('Book not found');
+        }
+
         // replace the book in the array with the updated book
-        data.books[id] = updatedBook;
+        data.books[bookIndex] = updatedBook;
 
         writeFile(JSON.stringify(data, null, 2), () => {
             res.status(200).send(`Book id:${id} updated`);

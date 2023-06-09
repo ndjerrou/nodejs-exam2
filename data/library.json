@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "1"
+  },
+  {
+    "title": "Harry Potter and the Chamber of Secrets",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "2"
+  },
+  {
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "3"
+  },
+  {
+    "title": "Harry Potter and the Goblet of Fire",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "4"
+  },
+  {
+    "title": "Harry Potter and the Order of the Phoenix",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "5"
+  },
+  {
+    "title": "Harry Potter and the Half-Blood Prince",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "6"
+  },
+  {
+    "title": "Harry Potter and the Deathly Hallows",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "7"
+  },
+  {
+    "title": "Fantastic Beasts and Where to Find Them",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "8"
+  },
+  {
+    "title": "Quidditch Through the Ages",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "9"
+  },
+  {
+    "title": "The Tales of Beedle the Bard",
+    "author": "J.K. Rowling",
+    "nationality": "British",
+    "id": "10"
+  },
+  {
+    "title": "Nouveau titre",
+    "author": "nouvel auteur",
+    "nationality": "France",
+    "id": "15"
+  }
+]

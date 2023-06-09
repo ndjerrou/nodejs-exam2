@@ -4,15 +4,17 @@ const { bookSchema } = require('../models/book');
 // get books
 exports.getBooks = (req, res) => {
     readFile(data => {
-        res.send(data.books);
+        const { books } = data;
+        res.send(books);
     }, true, 'db.json');
 };
 
 // get one book
 exports.getBook = (req, res) => {
     readFile(data => {
-        const bookId = req.params.id;
-        const book = data.books.find(b => b.id == bookId);
+        const { id } = req.params;
+        const { books } = data;
+        const book = books.find(b => b.id == id);
 
         if (!book) {
             return res.status(404).send('Book not found');
@@ -25,11 +27,12 @@ exports.getBook = (req, res) => {
 // add a new book
 exports.postBook = (req, res) => {
     readFile(data => {
+        const { title, author, nationality } = req.body;
         const newBook = {
             id: data.books.length + 1,
-            title: req.body.title,
-            author: req.body.author,
-            nationality: req.body.nationality
+            title,
+            author,
+            nationality
         };
 
         // validate the book data
@@ -50,18 +53,13 @@ exports.postBook = (req, res) => {
 // update a book
 exports.putBook = (req, res) => {
     readFile(data => {
-        const bookId = req.params.id;
-        const bookIndex = data.books.findIndex(b => b.id == bookId);
-
-        if (bookIndex === -1) {
-            return res.status(404).send('Book not found');
-        }
-
+        const { id } = req.params;
+        const { title, author, nationality } = req.body;
         const updatedBook = {
-            id: bookId,
-            title: req.body.title,
-            author: req.body.author,
-            nationality: req.body.nationality
+            id,
+            title,
+            author,
+            nationality
         };
 
         // validate the updated book data
@@ -72,10 +70,10 @@ exports.putBook = (req, res) => {
         }
 
         // replace the book in the array with the updated book
-        data.books[bookIndex] = updatedBook;
+        data.books[id] = updatedBook;
 
         writeFile(JSON.stringify(data, null, 2), () => {
-            res.status(200).send(`Book id:${bookId} updated`);
+            res.status(200).send(`Book id:${id} updated`);
         }, 'db.json');
     }, true, 'db.json');
 };
@@ -83,8 +81,9 @@ exports.putBook = (req, res) => {
 // Delete a book
 exports.deleteBook = (req, res) => {
     readFile(data => {
-        const bookId = req.params.id;
-        const bookIndex = data.books.findIndex(b => b.id == bookId);
+        const { id } = req.params;
+        // const bookId = req.params.id;
+        const bookIndex = data.books.findIndex(b => b.id == id);
 
         if (bookIndex === -1) {
             return res.status(404).send('Book not found');
@@ -94,7 +93,7 @@ exports.deleteBook = (req, res) => {
         data.books.splice(bookIndex, 1);
 
         writeFile(JSON.stringify(data, null, 2), () => {
-            res.status(200).send(`Book id:${bookId} removed`);
+            res.status(200).send(`Book id:${id} removed`);
         }, 'db.json');
     }, true, 'db.json');
 };

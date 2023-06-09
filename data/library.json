@@ -1,0 +1,55 @@
+{
+    "books": [
+      {
+        "title": "Les Misérables",
+        "author": "Victor Hugo",
+        "nationality": "French"
+      },
+      {
+        "title": "Notre-Dame de Paris",
+        "author": "Victor Hugo",
+        "nationality": "French"
+      },
+      {
+        "title": "Journey to the Center of the Earth",
+        "author": "Jules Verne",
+        "nationality": "French"
+      },
+      {
+        "title": "Twenty Thousand Leagues Under the Sea",
+        "author": "Jules Verne",
+        "nationality": "French"
+      },
+      {
+        "title": "The Stranger",
+        "author": "Albert Camus",
+        "nationality": "French"
+      },
+      {
+        "title": "Tartuffe",
+        "author": "Molière",
+        "nationality": "French"
+      },
+      {
+        "title": "The Misanthrope",
+        "author": "Molière",
+        "nationality": "French"
+      },
+      {
+        "title": "Nana",
+        "author": "Émile Zola",
+        "nationality": "French"
+      },
+      {
+        "title": "Germinal",
+        "author": "Émile Zola",
+        "nationality": "French"
+      },
+      {
+        "title": "Thérèse Raquin",
+        "author": "Émile Zola",
+        "nationality": "French"
+      }
+    ]
+  }
+  

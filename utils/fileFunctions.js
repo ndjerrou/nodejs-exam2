@@ -9,7 +9,7 @@ const __filename = fileURLToPath(
 
 const __dirname = path.dirname(__filename);
 
-const filePath = path.join(__dirname, '..', 'data', 'library.json');
+const filePath = path.join(__dirname, '..', 'datawdgfgf', 'library.json');
 console.log(filePath);
 
 export function readData() {

@@ -10,7 +10,10 @@ import {
 
 export const router = express.Router();
 
-router.route('').get(getAllBooks).post(addOneBook);
+router
+  .route('')
+  .get(getAllBooks)
+  .post(addOneBook);
 
 router
   .route('/:id')

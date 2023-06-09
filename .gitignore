@@ -1,0 +1,24 @@
+# Dossiers
+node_modules/
+dist/
+
+# Fichiers
+.env
+.DS_Store
+.package.json
+.package-lock.json
+*.log
+
+# Fichiers d'éditeurs
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*.swo
+
+# Logs de test
+coverage/
+
+# Fichiers de build
+build/
+out/

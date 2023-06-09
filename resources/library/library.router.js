@@ -8,15 +8,16 @@ const {
     deleteOneBook,
 } = require('./library.controller');
 const verifyPayload = require('../../middlewares/verifyPayload');
+const log = require('../../middlewares/logger');
 
 const router = express.Router();
 
-router.route('/books').get(getBooks).post(verifyPayload, addOneBook);
+router.route('/books').get(log, getBooks).post(log, verifyPayload, addOneBook);
 
 router
     .route('/books/:id')
-    .get(getOneBook)
-    .put(updateOneBook)
-    .delete(deleteOneBook);
+    .get(log,getOneBook)
+    .put(log,updateOneBook)
+    .delete(log,deleteOneBook);
 
 module.exports = router;

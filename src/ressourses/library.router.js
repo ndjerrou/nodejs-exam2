@@ -7,8 +7,7 @@ const {
   updateOnebook,
   deleteOnebook,
 } = require('./library.controller');
-const verifyPayload = require('../../middlewares/verifyPayload');
-
+const verifBook = require('../../middlewares/verifBook');
 const router = express.Router();
 
 /**
@@ -16,7 +15,7 @@ const router = express.Router();
  * GET /
  * POST /
  */
-router.route('').get(getbooks).post(verifyPayload, addOnebook);
+router.route('').get(getbooks).post(verifBook, addOnebook);
 
 /**
  * Route pour obtenir, mettre à jour et supprimer un livre spécifique

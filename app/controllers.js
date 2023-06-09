@@ -28,9 +28,8 @@ export const getAllBooks = (req, res) => {
         title,
         nationality
     });
-    console.log(filteredBooks);
     const sortedBooks = sortFunction(filteredBooks, sort);
-    console.log(sortedBooks);
+
     res.status(200).send(limit ? sortedBooks.slice(0, limit) : sortedBooks)
 }
 

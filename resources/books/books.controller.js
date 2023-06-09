@@ -19,6 +19,35 @@ module.exports = {
   getBooks(req, res) {
     const books = readData();
 
+    const { sortByTitle } = req.query;
+
+    // Implement pagination logic here
+    // For example, you can use query parameters like ?page=1&limit=10
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+
+    let sortedBooks = [...books.books];
+
+    if (sortByTitle) {
+      sortedBooks = sortedBooks.sort((a, b) =>
+        a.title.localeCompare(b.title)
+      );
+    }
+
+
+    const paginatedBooks = sortedBooks.slice(startIndex, endIndex);
+
+    res.json({
+      total: books.length,
+      page,
+      limit,
+      data: paginatedBooks,
+    });
+
+
+
     res.send(books);
   },
   getOneBook(req, res) {

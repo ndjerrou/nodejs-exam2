@@ -20,7 +20,7 @@ router.route('/addBook').post(verifyPayload, addOneBook);
 router
   .route('/book/:id')
   .get(getOneBook)
-  .put(updateOneBook) // middleware
-  .delete(verifyRight, deleteOneBook);
+  .put(verifyPayload, updateOneBook)
+  .delete(verifyRight, deleteOneBook); // pas de systeme d'auth pour le moment, quote verify pour tester la route 
 
 module.exports = router;

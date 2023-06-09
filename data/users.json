@@ -1,0 +1,14 @@
+[
+  {
+    "id": "96743924-6ce1-4afb-b2b4-d9718750d973",
+    "name": "Tom",
+    "email": "tom.sonvico@free.fr",
+    "password": "$2b$10$oqqhmx.VJ9j6JVaUCnYB/.bqEJhpYYghIieAhttgJlstsiF.QESCe"
+  },
+  {
+    "id": "3e73d3ac-1fe4-4dcc-b322-a3e5486ac80e",
+    "name": "Paul",
+    "email": "paul.sonvico@free.fr",
+    "password": "$2b$10$..DD/7J.G2YRtyutFtwcDePmvbQZgJxztVZb47Q/vQRfX15MRGIaO"
+  }
+]

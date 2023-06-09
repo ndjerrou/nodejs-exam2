@@ -1,0 +1,458 @@
+[
+  {
+    "title": "La traversée des Pyrénées",
+    "author": "Tom",
+    "nationality": "FR",
+    "id": 1
+  },
+  {
+    "title": "Le secret de l'île",
+    "author": "Alice",
+    "nationality": "US",
+    "id": 2
+  },
+  {
+    "title": "L'écho du passé",
+    "author": "John",
+    "nationality": "GB",
+    "id": 3
+  },
+  {
+    "title": "Les mystères de Paris",
+    "author": "Marie",
+    "nationality": "FR",
+    "id": 4
+  },
+  {
+    "title": "Le chant de l'océan",
+    "author": "Peter",
+    "nationality": "DE",
+    "id": 5
+  },
+  {
+    "title": "The Great Adventure",
+    "author": "Emily",
+    "nationality": "US",
+    "id": 6
+  },
+  {
+    "title": "A Tale of Two Cities",
+    "author": "Charles",
+    "nationality": "GB",
+    "id": 7
+  },
+  {
+    "title": "La montagne enchantée",
+    "author": "Sophie",
+    "nationality": "FR",
+    "id": 8
+  },
+  {
+    "title": "Die Reise der Träume",
+    "author": "Max",
+    "nationality": "DE",
+    "id": 9
+  },
+  {
+    "title": "The Alchemist",
+    "author": "Paulo",
+    "nationality": "BR",
+    "id": 10
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "nationality": "US",
+    "id": 11
+  },
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "nationality": "GB",
+    "id": 12
+  },
+  {
+    "title": "Le Petit Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "nationality": "FR",
+    "id": 13
+  },
+  {
+    "title": "Nineteen Eighty-Four",
+    "author": "George Orwell",
+    "nationality": "GB",
+    "id": 14
+  },
+  {
+    "title": "Der Prozess",
+    "author": "Franz Kafka",
+    "nationality": "CZ",
+    "id": 15
+  },
+  {
+    "title": "Don Quijote de la Mancha",
+    "author": "Miguel de Cervantes",
+    "nationality": "ES",
+    "id": 16
+  },
+  {
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "nationality": "RU",
+    "id": 17
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "nationality": "GB",
+    "id": 18
+  },
+  {
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "nationality": "IE",
+    "id": 19
+  },
+  {
+    "title": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "nationality": "CO",
+    "id": 20
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "nationality": "US",
+    "id": 21
+  },
+  {
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "nationality": "FR",
+    "id": 22
+  },
+  {
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "nationality": "RU",
+    "id": 23
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "nationality": "GB",
+    "id": 24
+  },
+  {
+    "title": "El amor en los tiempos del cólera",
+    "author": "Gabriel García Márquez",
+    "nationality": "CO",
+    "id": 25
+  },
+  {
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "nationality": "US",
+    "id": 26
+  },
+  {
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "nationality": "GB",
+    "id": 27
+  },
+  {
+    "title": "La Divina Commedia",
+    "author": "Dante Alighieri",
+    "nationality": "IT",
+    "id": 28
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "nationality": "US",
+    "id": 29
+  },
+  {
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "nationality": "RU",
+    "id": 30
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "nationality": "GB",
+    "id": 31
+  },
+  {
+    "title": "La sombra del viento",
+    "author": "Carlos Ruiz Zafón",
+    "nationality": "ES",
+    "id": 32
+  },
+  {
+    "title": "Alice's Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "nationality": "GB",
+    "id": 33
+  },
+  {
+    "title": "The Odyssey",
+    "author": "Homer",
+    "nationality": "GR",
+    "id": 34
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "nationality": "GB",
+    "id": 35
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "nationality": "CO",
+    "id": 36
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "nationality": "RU",
+    "id": 37
+  },
+  {
+    "title": "The Divine Comedy",
+    "author": "Dante Alighieri",
+    "nationality": "IT",
+    "id": 38
+  },
+  {
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "nationality": "FR",
+    "id": 39
+  },
+  {
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "nationality": "RU",
+    "id": 40
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "nationality": "GB",
+    "id": 41
+  },
+  {
+    "title": "El amor en los tiempos del cólera",
+    "author": "Gabriel García Márquez",
+    "nationality": "CO",
+    "id": 42
+  },
+  {
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "nationality": "US",
+    "id": 43
+  },
+  {
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "nationality": "GB",
+    "id": 44
+  },
+  {
+    "title": "La Divina Commedia",
+    "author": "Dante Alighieri",
+    "nationality": "IT",
+    "id": 45
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "nationality": "US",
+    "id": 46
+  },
+  {
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "nationality": "RU",
+    "id": 47
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "nationality": "GB",
+    "id": 48
+  },
+  {
+    "title": "La sombra del viento",
+    "author": "Carlos Ruiz Zafón",
+    "nationality": "ES",
+    "id": 49
+  },
+  {
+    "title": "Alice's Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "nationality": "GB",
+    "id": 50
+  },
+  {
+    "title": "The Odyssey",
+    "author": "Homer",
+    "nationality": "GR",
+    "id": 51
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "nationality": "GB",
+    "id": 52
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "nationality": "CO",
+    "id": 53
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "nationality": "RU",
+    "id": 54
+  },
+  {
+    "title": "The Divine Comedy",
+    "author": "Dante Alighieri",
+    "nationality": "IT",
+    "id": 55
+  },
+  {
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "nationality": "FR",
+    "id": 56
+  },
+  {
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "nationality": "RU",
+    "id": 57
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "nationality": "GB",
+    "id": 58
+  },
+  {
+    "title": "El amor en los tiempos del cólera",
+    "author": "Gabriel García Márquez",
+    "nationality": "CO",
+    "id": 59
+  },
+  {
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "nationality": "US",
+    "id": 60
+  },
+  {
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "nationality": "GB",
+    "id": 61
+  },
+  {
+    "title": "La Divina Commedia",
+    "author": "Dante Alighieri",
+    "nationality": "IT",
+    "id": 62
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "nationality": "US",
+    "id": 63
+  },
+  {
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "nationality": "RU",
+    "id": 64
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "nationality": "GB",
+    "id": 65
+  },
+  {
+    "title": "La sombra del viento",
+    "author": "Carlos Ruiz Zafón",
+    "nationality": "ES",
+    "id": 66
+  },
+  {
+    "title": "Alice's Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "nationality": "GB",
+    "id": 67
+  },
+  {
+    "title": "The Odyssey",
+    "author": "Homer",
+    "nationality": "GR",
+    "id": 68
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "nationality": "GB",
+    "id": 69
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "nationality": "CO",
+    "id": 70
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "nationality": "RU",
+    "id": 71
+  },
+  {
+    "title": "The Divine Comedy",
+    "author": "Dante Alighieri",
+    "nationality": "IT",
+    "id": 72
+  },
+  {
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "nationality": "FR",
+    "id": 73
+  },
+  {
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "nationality": "RU",
+    "id": 74
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "nationality": "GB",
+    "id": 75
+  },
+  {
+    "title": "El amor en los tiempos del cólera",
+    "author": "Gabriel García Márquez",
+    "nationality": "CO",
+    "id": 76
+  }
+]

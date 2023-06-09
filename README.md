@@ -1,3 +1,19 @@
+# Routes
+
+## Books
+
+| route      | methode | type                | desc                       | required                |
+| ---------- | ------- | ------------------- | -------------------------- | ----------------------- |
+| /books     |         |
+|            | Get     | query               | allBooks                   |                         |
+|            |         | string              | auteur, titre, nationalite |                         |
+|            |         | number              | page, limit                |                         |
+|            | Post    | JSON , Body, string | new book                   | id, auteur, nationalite |
+|            | Put     | JSON , Body, string | update book                | id                      |
+|            | Delete  | JSON , Body, string | delete book                | id                      |
+| /books/:id |         |                     |
+|            | Get     | Params              | search book                | id params               |
+
 # Project Title: Library Management System with Local JSON Database
 
 Context: You have been assigned to develop a Library Management System API using Node.js, Express, and JavaScript ES6. The API will provide endpoints for managing books in a library. In this project, you will incorporate a local JSON file as a simple database to store book data persistently. Your focus should be on designing efficient CRUD operations, proper error handling, middleware implementation, and database interactions.
@@ -39,7 +55,6 @@ Context: You have been assigned to develop a Library Management System API using
 - Write clear and concise documentation for each endpoint, including expected request/response formats.
 - Test your API using a REST client (e.g., Postman) to ensure the endpoints work as expected.
 - Demonstrate proper error handling for edge cases, such as invalid requests or missing book entries.
-- Only the async/await syntax is allowed to ensure a proper handling of the asynchronous code 
+- Only the async/await syntax is allowed to ensure a proper handling of the asynchronous code
 
   Note: In this project, the local JSON file will serve as a basic database for simplicity. Focus on implementing the server-side functionality, efficient data retrieval and manipulation, middleware usage, and error handling.
-
